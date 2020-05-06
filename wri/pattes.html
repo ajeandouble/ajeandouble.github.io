@@ -1,415 +1,82 @@
-<!doctype html>
-<html>
-<head>
-<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
-<title>Pattes blanches</title><link href='https://raw.githubusercontent.com/slashfoo/lmweb/master/style/latinmodern-mono-light.css' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
-html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
-body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
-iframe { margin: auto; }
-a.url { word-break: break-all; }
-a:active, a:hover { outline: 0px; }
-.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
-#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
-#write.first-line-indent p { text-indent: 2em; }
-#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
-#write.first-line-indent li { margin-left: 2em; }
-.for-image #write { padding-left: 8px; padding-right: 8px; }
-body.typora-export { padding-left: 30px; padding-right: 30px; }
-.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
-@media screen and (max-width: 500px) {
-  body.typora-export { padding-left: 0px; padding-right: 0px; }
-  #write { padding-left: 20px; padding-right: 20px; }
-  .CodeMirror-sizer { margin-left: 0px !important; }
-  .CodeMirror-gutters { display: none !important; }
-}
-#write li > figure:last-child { margin-bottom: 0.5rem; }
-#write ol, #write ul { position: relative; }
-img { max-width: 100%; vertical-align: middle; }
-button, input, select, textarea { color: inherit; font: inherit; }
-input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
-*, ::after, ::before { box-sizing: border-box; }
-#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
-#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
-p { line-height: inherit; }
-h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
-p { orphans: 4; }
-h1 { font-size: 2rem; }
-h2 { font-size: 1.8rem; }
-h3 { font-size: 1.6rem; }
-h4 { font-size: 1.4rem; }
-h5 { font-size: 1.2rem; }
-h6 { font-size: 1rem; }
-.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
-.hidden { display: none; }
-.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
-a { cursor: pointer; }
-sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
-sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
-#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
-figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
-figure > table { margin: 0px !important; }
-tr { break-inside: avoid; break-after: auto; }
-thead { display: table-header-group; }
-table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
-table.md-table td { min-width: 32px; }
-.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
-.CodeMirror-linenumber { user-select: none; }
-.CodeMirror { text-align: left; }
-.CodeMirror-placeholder { opacity: 0.3; }
-.CodeMirror pre { padding: 0px 4px; }
-.CodeMirror-lines { padding: 0px; }
-div.hr:focus { cursor: none; }
-#write pre { white-space: pre-wrap; }
-#write.fences-no-line-wrapping pre { white-space: pre; }
-#write pre.ty-contain-cm { white-space: normal; }
-.CodeMirror-gutters { margin-right: 4px; }
-.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
-.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
-#write .md-fences.mock-cm { white-space: pre-wrap; }
-.md-fences.md-fences-with-lineno { padding-left: 0px; }
-#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
-.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
-.CodeMirror-line, twitterwidget { break-inside: avoid; }
-.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
-.footnotes + .footnotes { margin-top: 0px; }
-.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
-li div { padding-top: 0px; }
-blockquote { margin: 1rem 0px; }
-li .mathjax-block, li p { margin: 0.5rem 0px; }
-li { margin: 0px; position: relative; }
-blockquote > :last-child { margin-bottom: 0px; }
-blockquote > :first-child, li > :first-child { margin-top: 0px; }
-.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
-#write .footnote-line { white-space: pre-wrap; }
-@media print {
-  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
-  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
-  .typora-export * { -webkit-print-color-adjust: exact; }
-  html.blink-to-pdf { font-size: 13px; }
-  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
-  .typora-export #write::after { height: 0px; }
-}
-.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
-a img, img a { cursor: pointer; }
-pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
-p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
-p > .md-image:only-child { display: inline-block; width: 100%; }
-#write .MathJax_Display { margin: 0.8em 0px 0px; }
-.md-math-block { width: 100%; }
-.md-math-block:not(:empty)::after { display: none; }
-[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
-.md-task-list-item { position: relative; list-style-type: none; }
-.task-list-item.md-task-list-item { padding-left: 0px; }
-.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
-.math { font-size: 1rem; }
-.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
-.md-toc-content { position: relative; margin-left: 0px; }
-.md-toc-content::after, .md-toc::after { display: none; }
-.md-toc-item { display: block; color: rgb(65, 131, 196); }
-.md-toc-item a { text-decoration: none; }
-.md-toc-inner:hover { text-decoration: underline; }
-.md-toc-inner { display: inline-block; cursor: pointer; }
-.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
-.md-toc-h2 .md-toc-inner { margin-left: 2em; }
-.md-toc-h3 .md-toc-inner { margin-left: 4em; }
-.md-toc-h4 .md-toc-inner { margin-left: 6em; }
-.md-toc-h5 .md-toc-inner { margin-left: 8em; }
-.md-toc-h6 .md-toc-inner { margin-left: 10em; }
-@media screen and (max-width: 48em) {
-  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
-  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
-  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
-  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
-}
-a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
-.footnote-line a:not(.reversefootnote) { color: inherit; }
-.md-attr { display: none; }
-.md-fn-count::after { content: "."; }
-code, pre, samp, tt { font-family: var(--monospace); }
-kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
-.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
-code { text-align: left; vertical-align: initial; }
-a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
-.md-inline-math .MathJax_SVG .noError { display: none !important; }
-.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
-.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
-.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
-.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
-.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
-.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
-.MathJax_SVG * { transition: none 0s ease 0s; }
-.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
-.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
-.md-diagram-panel > svg { max-width: 100%; }
-[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
-[lang="mermaid"] .node text { font-size: 1rem; }
-table tr th { border-bottom: 0px; }
-video { max-width: 100%; display: block; margin: 0px auto; }
-iframe { max-width: 100%; width: 100%; border: none; }
-.highlight td, .highlight tr { border: 0px; }
-svg[id^="mermaidChart"] { line-height: 1em; }
-mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
-.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
-mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
-
-
-:root {
-    --side-bar-bg-color: white;
-    --window-border: none;
-    --search-select-bg-color: #575c61;
-    --active-file-bg-color: #f1f4f5;
-    --item-hover-bg-color: #f1f4f5;
-    --item-hover-text-color: black;
-    --control-text-color: #555;
-}
-
-@include-when-export url(https://raw.githubusercontent.com/slashfoo/lmweb/master/style/latinmodern-mono-light.css);
-
-html {
-    font-size: 12pt;
-}
-
-#write {
-    font-family: "STIX2Text", "Times New Roman", "serif";
-    line-height: 1.5em;
-    padding: 10%;
-    padding-top: 5%;
-}
-
-.file-list-item-summary {
-    height: 36px;
-}
-
-.file-list-item {
-    padding-top: 18px !important;
-    padding-bottom: 18px;
-}
-
-#sidebar-loading-template.file-list-item {
-    padding-top: 0 !important;
-}
-
-a, a:visited {
-    color: #a00;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: inherit;
-    line-height: 1.5em;
-    margin-bottom: 1em;
-    margin-top: 1em;
-}
-
-h1  {
-    font-size: 2.4em;
-}
-
-#write h1  {
-    text-align: center;
-}
-
-h2 {
-    font-size: 1.8em;
-}
-
-h3 {
-    font-size: 1.4em;
-}
-
-h4 {
-    font-size: 1.2em;
-}
-
-h5  {
-    font-size: 1.1em;
-}
-
-h6 {
-    font-size: 1em;
-}
-
-p {
-    margin-top: 1em;
-    margin-bottom: 1em;
-    text-align: justify;
-}
-
-pre, code {
-    font-family: 'Latin Modern Mono Light', "Latin Modern Mono", monospace !important;
-}
-
-.footnotes {
-    display: list-item;
-    margin-left: 1em;
-}
-
-.md-fences {
-    border: 1px solid;
-}
-
-.md-fences.md-fences-with-lineno {
-    border: none;
-}
-
-.CodeMirror-linenumber {
-    color: #333;
-}
-
-*.in-text-selection,
-::selection,
-.CodeMirror-selected {
-    background: var(--search-select-bg-color);
-    color: var(--search-select-text-color) !important;
-    text-shadow: none;
-}
-
-a.md-toc-inner {
-    color: var(--text-color);
-}
-
-.cm-s-typora-default .cm-link {
-    color: #a00;
-    text-decoration: underline;
-}
-
-.cm-s-typora-default .cm-header, .cm-s-typora-default .cm-property {
-    color: black;
-}
-
-#typora-source .CodeMirror-lines {
-    -webkit-font-smoothing: auto;
-    max-width: 1000px;
-}
-
-.md-def-name:before,
-.md-def-name:after {
-    color: #2d2d2d;
-}
-
-sup.md-footnote {
-    background-color: initial;
-    color: inherit;
-}
-
-mark {
-    background: #fff387;
-}
-
-td, th {
-    border: 1px solid;
-    padding-left: 1ch;
-    padding-right: 1ch;
-}
-
-/*table tr[cid]:first-child > td {
-    border-top: 3px double;
-}*/
-
-th {
-    border-bottom: 0;
-    padding-top: 2px;
-    background: #575c61;
-    border-color: #333;
-    color: #f3f3f3;
-}
-
-pre.md-meta-block {
-    border: 1px solid #a2a9b1;
-    background-color: #f8f9fa;
-    padding: 5px;
-    margin-bottom: 1em;
-}
-
-.task-list-item input:before {
-    content: '\221A';
-    display: inline-block;
-    width: 1.25rem;
-    height: 1.6rem;
-    vertical-align: middle;
-    text-align: center;
-    color: #bbb;
-    background-color: inherit;
-}
-
-.task-list-item input:checked:before,
-.task-list-item input[checked]:before{
-    color: inherit;
-}
-
-.md-task-list-item > input {
-    top: auto;
-    margin-left: -1.1em;
-    font-size: 1.3em;
-    margin-top: 0px;
-    -webkit-appearance: none;
-}
-
-.md-task-list-item input:before {
-    content: '\2610';
-    display: inline-block;
-    width: 1.25rem;
-    height: 1.6rem;
-    vertical-align: middle;
-    text-align: center;
-    color: #bbb;
-    background-color: inherit;
-}
-
-.md-task-list-item input:checked:before,
-.md-task-list-item input[checked]:before{
-    color: inherit;
-    content: '\2611';
-}
-
-.task-list-item {
-    padding-left: 1.5em;
-}
-
-blockquote {
-    font-style: italic;
-    padding: 0.25em 24px;
-    position: relative;
-    color: #383838;
-    border-left: 2px solid;
-    
-}
-
-#write > blockquote {
-    padding: 0.25em 30px;
-    margin-left: -32px;
-    width: calc(100% + 32px);
-}
-
-#write >  .md-fences-with-lineno {
-    margin-left: -33px;
-    color: black;
-}
-
-.CodeMirror-linenumber {
-    min-width: 25px;
-}
-
-.md-header {
-    font-size: inherit !important;
-}
-
-/*blockquote:before {
-    display: block;
-    content: "\201C";
-    font-size: 80px;
-    position: absolute;
-    left: -20px;
-    top: -20px;
-    color: #7a7a7a;
-}*/
+À Wikipedia
 
 
 
-</style>
-</head>
-<body class='typora-export' >
-<div  id='write'  class = 'is-node'><p>&nbsp;</p><p><span>Rouky a du mal à mettre des mots sur ce qu&#39;il ressent et préfère rester évasif. &quot;Miaou&quot;.</span></p><p><span>Il présente des symtpomes anxieux, des pulsions sadiques puériles</span></p><p><span>C&#39;est le mois de juillet. Sort de l&#39;allée. On s&#39;avance vers le champ, près de la cabane de Mr Toreau</span></p><p>&nbsp;</p><p><span>Superstition:</span></p><p><span>je compte mes foulées pour que ca fasse 11, je mords sur le passage pieton</span></p><h5><a name="la-recherche" class="md-header-anchor"></a><span>La recherche</span></h5><p><span>On était a commencement de juillet et S suait à grande eau. Elle suivait le chemin vicinal en comptant superstitieusement pour que chaque onzième foulée morde l&#39;ombre jaunie d&#39;un platane. Le jour commençait à pâlir et les miaulements poussés à tue-tête restaient sans échos. Rouky dit &quot;Rouky pattes blanches geignait  derrière la colline au sang, ramassé sur le flanc, cataleptique et  désorienté près d&#39;un coquelicot.</span></p><blockquote><p><span>&quot;Je l&#39;ai trouvé près de chez Mr Thoreau, l&#39;anachorète electro-hypersensible.</span>
-<span>— Le pauvre. Il est transit de froid. On devrait le garder en observation dit la mère.</span>
-<span>— Il est bizarre depuis sa dialise. On devrait lui faire porter un GPS.</span></p></blockquote><p><span>Le chat n&#39;était pas contre  malgré son air abattu de névrosé de la grande guerre. Il jouissait à l&#39;idée de troquer son sextant pour une technologie de pointe du département de la défense américaine. Pourvu qu&#39;on ne le rende pas couard à force de cajoleries ineptes et de nourriture servie à son bon gré.</span></p><p>&nbsp;</p><p></u></p><p><span>&quot;s&#39;aventurer au delà de l&#39;écoumène&quot;</span></p><p><span>&quot;les deux colonnes d&#39;Hercule&quot; --&gt; signe $</span></p><p><span>Détroit sur un petit ruisseau vaseux</span></p><h5><a name="le-voisin" class="md-header-anchor"></a><span>Le voisin</span></h5><p>&nbsp;</p><h5><a name="la-maison-de-mr-thoreau" class="md-header-anchor"></a><span>La maison de Mr Thoreau</span></h5><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p><span>On un installe un collier GPS pour que le chat ne se sauve pas. Il est retourné </span></p><p><span>&quot;Ah non, surtout pas ce film. Ma mère a dit que c&#39;était triste. Sinon André Bazin va bien.&quot;</span></p><p>&nbsp;</p><p><span>la bible</span></p><p><span>C&#39;est le mois de juillet. Le chat va </span></p><p>&nbsp;</p><p><span>Le voisin passe une cuite de merde et il est enfermé dehors et il a froid et la voisine l&#39;invite</span></p><p><span>Ils boivent du jus de canebergevodka (meme que le chat pourrait avoir une infection urinaire. Cf. feu Rouky Pattes Blanches, il est important que le chat s&#39;appelle rouky pattes blanches)</span></p><p><span>Au même moment le voisin se coupe la joue en se rasant la moustache. Sang coagulé</span></p><p><span>On coupe les moustaches du chat à droite sans faire exprès</span></p><p><span>Le chat peut plus s&#39;orienter il tourne en rond et il trouve un truc/trésor symbolique</span></p><p><span>Le voisin ramène des musaraignes, des couleuvres et une salamandre (symbolique moyen-àge, Michel Pastoureau blablabla) pour remercier la voisine</span></p><p><span>Caler &quot;azurer&quot; et &quot;musarder&quot; pour l&#39;assonance avec musaraigne</span></p><p><span>Mr Thoreau, la coline au sang</span></p><p><span>Jus de caneberge</span></p><p>&nbsp;</p><p>&nbsp;</p><p><span>Tout est plus concentré, avec elle extra-quotidien, plus epressif</span></p><p><span>ramassée</span></p><p><span>coreau toile/seurat</span></p><p><span>cercle de confusion</span></p><p><span>Un doigt qui pointe dans un flacon de formol.</span></p><p><span>Utiliser les harmonies du gong. Les harmonies du gong doivent sonner dans les différente parties, trouer les harmonies dans les éléments clefs</span></p><p><span>Utiliser un son commun</span></p><p><span>les 5 sens.</span></p><p><span>Creative writing</span></p><p><span>Obsession pour la balance, 21 grammes de moins qu&#39;hier</span></p><p>&nbsp;</p></div>
-</body>
-</html>
+##### 1.
+
+On était a commencement de juillet et S suait à grande eau. Elle suivait le chemin vicinal en comptant superstitieusement pour que sa onzième foulée morde l'ombre jaunie d'un platane. Le jour commençait à pâlir et les miaulements poussés à tue-tête restaient sans échos. Rouky pattes blanches dit "Rouky" geignait  derrière la colline au sang, ramassé sur le flanc, cataleptique et  épuisé près d'un coquelicot.
+
+> "Je l'ai trouvé près de chez Mr Thoreau, l'anachorète électro-hypersensible dit S.
+> — Le pauvre. Il est transit de froid. On devrait le garder en observation conseilla son amie.
+> — Il est bizarre depuis sa dialyse. On devrait lui faire porter un GPS.
+
+Le chat n'était pas contre malgré son air abattu 		de névrosé de la grande guerre. Il jouissait à l'idée de troquer son sextant pour une technologie de pointe du département de la défense américaine. Pourvu qu'on ne l'eusse pas rendu couard à force de cajoleries ineptes et de nourriture servie à son bon gré. Il voudrait se propulser au delà des ruisseaux vaseux, dépasser l'oekoumène et forcer les colonnes d'Hercule pour goûter à l'eau claire qui ne pèse pas dans les reins.
+
+
+
+##### 2.
+
+Le voisin comptait ses pas en traversant la rue, vêtu d'une gabardine bleue, le froc imbu de rosée matinale. Un coquelicot fanait à vue d’œil dans la poche de sa chemise. Il gravit, passablement aviné et souffreteux, le dernier cassis avant la maison mère. Une voiture manqua de le renverser alors qu'il s'apprêtait à mordre, à la onzième enjambée. l'ultime ligne du passage piéton. "Merde mes clefs, je les ai oubliées, je vais aller gratter à la porte de la voisine. Elle a le double." pensa-t-il.
+
+
+
+**(est-ce qu'elle a des chaussons blancs comme le chat ?)** son fauteuil, près de la table basse était assise S. Ses cheveux blonds disparaissaient, conspirant en spirale derrière la nuque. Elle jeta son regard bleu cerné de khôl sur le voisin et versa dans un grand verre de vodka un peu de jus de canneberge. Ses ongles laissaient paraître à leur base des croissants couleur chair et seul l'ongle de son index droit était repeint. À son cou tombait une lunule rousse qui rejetait sciemment les rayons du soleil sur les napperon crèmes.
+
+"C'est un peu cavalier la vodka cranberry de bon matin mais j'imagine que ça prévient des infections urinaires. C'est déjà ça commenta-t-il.
+— J'ai peine à te regarder répondit-elle. Tu as passé une sale nuit ? demanda-t-elle.
+— Oui, fatalement. C'était franchement labyrinthique, j'ai louvoyé d'un bar à l'autre, j'ai commencé en périphérie et à mesure je me suis rapproché. Je n'arrêtais pas de tomber sur la même fille. Donc je me suis dit "c'est un signe". Je lui ai proposé un verre, mais une fois la commande passée j'ai réalisé que j'avais déjà tout dépensé. J'ai plus une thune. Elle est devenue très désagréable et ils m'ont viré.
+— Tu vois... je t'avais dit de te débarrasser de ta moustache. C'est commun ce genre de choses si tu es aussi séduisant qu'une gorgone.
+— Je devrai me raser la tête et aller au japon faire zazen. Mais je rentre chez moi décuver. *Ça va être terrible. J'aurai grand besoin d'une cellule de soutien psychologique, d'un rebouteux, d'un magnétiseur, d'un valium et de deux litres de limonade.*
+— Tu me fais penser aux céramiques brisées qu'au japon on recolle avec de la laque et de la poussière d'or.
+— Je sais mais pour ce qui est du sentiment amoureux je suis passablement ignifuge. Je t'assure.
+— Maintenant que j'y pense tu dois valoir une blinde. À force de maladresses, on t'a raccommodé des milliers de fois. Tu es en or massif.
+— Salut !
+— Lave toi les cheveux *Antoine*, ils sont gras."
+
+Il se débarbouilla à l'eau glacée et se coupa la joue en se rasant. "Je crois que je suis entrain de tomber amoureux de la voisine" observa--t-il en regardant perler le sang sur la lame du rasoir.
+
+
+
+##### 3.
+
+L’obscurité baignait la maison de Mr Th. À travers les petites meurtrières formées par les volets rabattus, qui laissaient à peine s'écouler *une lumière de suie (????)*, il jouissait d'un 'avantage topographique et pouvait surveiller l'horizon. Il approcha ses mains du chat réfugié sous une commode. ***(...)***
+
+"Ça ne leur suffit plus la 5G et le drone que j'ai abattu au lance pierre quand je faisais ma maraude près du lac. Ils m'envoient un émissaire roux. Qu'est-ce que c'est que ça ? Tu as une bombe  ficelée au cou. Ils ont déjà débusqué Snowden, Hakim Bey et Patrick McGohann. Vite que je la leste et la jette au fond de l'eau. Ne te débats pas, je ne veux pas te blesser avec mes ciseaux. Tu es une victime collatérale. Merde pas tes moustaches. Je ne voulais pas mais tu t'agites trop."
+
+Un éclat de voix tout proche le fit suer brusquement et il laissa le chat glisser et bondir par la fenêtre dans les bras de sa maîtresse.
+
+
+
+**4.**
+
+*X* s'en allait musarder près du lac. Sa joue le lançait . "C'est curieux que la douleur soit si vive. Je me suis à peine éraflé la joue. Est-ce qu'en visant le cœur la flèche a ricoché près de ma joue ?" se demanda-t-il. Sa mâchoire s’échauffait. *La douleur bouillonnait comme de la lave sous une croûte de sang coagulé. Sa joue avait la consistance d'une étoffe que les mains d'un artisan invisible, la reprisant au fil d'or, venait poindre et tirailler.* Son pas s'allégea et ses talons devinrent discrets comme des coussinets. Les couleurs vives autour de lui se ternissaient à vue d’œil et s'affaissaient; les plantes tiraient vers des bruns insipides et le soleil devint lit de vin. Il eut bientôt du mal à distinguer les formes au delà de quelques mètres. Le panneau d'avertissement qui précédait la maison de Mr Th. ne représentait plus qu'un bariolage insensé de caractères hiératiques*. À mesure qu'il progressait, des clameurs montaient du sol et il reconnut les paroles d'une' salamandre ignifuge, d'une couleuvre ou d'une musaraigne.* **(bosser la symbolique du bestiaire)** Mal dit, voir Hoffmann et cie. **Simplifier ?** Verbes pas assez puissants.
+
+
+
+##### **5.**
+
+— S. sent une odeur pestilentielle
+
+— S trouve des animaux morts au pied de sa porte **(faire comprendre que c'est l'autre crétin qui les a ramenés)**
+
+
+
+##### 6. 
+
+
+
+S a Sa robe effiloquée à cause des ronces. X est avec elle.
+
+Le chat est assis sur une malette qui contient la thuuuune
+
+"je crois qu'on a résolu ton problème d'argent"
+
+Elle dénoue ses cheveux blonds
+
+
+
+Il y a deux hypothèses concernant le signe dollar, l'une d'elle (voir wikiepdia)
+
+mais il y a aussi une troisième hypothèse sans fondement, que Mr Thoreau avait inventé
+
+**Thoreau est retrouvé mot (foudroyé ou à cause d'un dispositif électronique ?)
