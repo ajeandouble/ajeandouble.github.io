@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>François Xavier Jean</title>
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,600|Raleway:400,600&display=swap" rel="stylesheet">
+
+	<!-- Active link's underneath line	-->
+	<script>
+		$('.nav-link').on('click', function() {
+	$('.active-link').removeClass('active-link');
+	$(this).addClass('active-link');
+});
+	</script>
+</head>
+
+<body>
+	<header id="header-main">
+		<nav>
+			<ul>
+				<li><a href="#">Peintures</a></li>
+				<li><a href="#">Dessins</a></li>
+				<li><a href="#">Bio</a></li>
+				<li><a href="#"><b id="envelope">✉</b></a></li>
+
+				<!-- TODO: sub navbar with underneath line that moves to the selected gallery !-->
+			</ul>
+		</nav>
+	</header>
+	<main id="peintures">
+		<header id="header-peintures">
+			<nav>
+				<ul>
+					<li><a href="#">Huiles</a></li>
+					<li><a class="selected" href="#">Encres</a></li>
+					<li><a href="#">Blabla</a></li>
+				</ul>
+			</nav>
+		</header>
+		<div class="grid-container">
+			<div class="grid-item">0</div>
+			<div class="grid-item">1</div>
+			<div class="grid-item">2</div>
+			<div class="grid-item">3</div>
+			<div class="grid-item">4</div>
+			<div class="grid-item">5</div>
+			<div class="grid-item">6</div>
+			<div class="grid-item">7</div>
+			<div class="grid-item">8</div>
+			<div class="grid-item">9</div>
+			<div class="grid-item">0</div>
+			<div class="grid-item">1</div>
+			<div class="grid-item">2</div>
+			<div class="grid-item">3</div>
+			<div class="grid-item">4</div>
+			<div class="grid-item">5</div>
+			<div class="grid-item">6</div>
+			<div class="grid-item">7</div>
+			<div class="grid-item">8</div>
+			<div class="grid-item">9</div>
+		</div>
+		<article id="article-peintures">
+			<h5 class="title">Huile et blabla</h5>
+			<p class="txt">ALorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae posuere libero. Phasellus neque nibh, cursus quis tincidunt ac, malesuada eu sem. In in nulla ac orci fringilla commodo. Pellentesque venenatis nisi quam, accumsan gravida eros dignissim ac. Donec scelerisque venenatis orci, at dapibus lorem commodo in. Sed blandit urna vitae lacus condimentum accumsan. Sed dignissim, diam vel malesuada vestibulum, nibh massa ultrices metus, quis scelerisque felis purus non lorem. Nunc odio turpis, molestie sed dui ut, imperdiet congue eros. Cras aliquet viverra enim, sed varius purus pellentesque non. Aliquam quis ultrices velit. Maecenas ut gravida lacus, non interdum felis. Pellentesque at sapien placerat sem consectetur condimentum. Curabitur fermentum luctus ex non accumsan. Sed ac dolor pharetra, sagittis metus a, lacinia lectus.
+
+				Maecenas sodales sapien ex, vitae <b>tempus leo tempor ac.</b> In quis tincidunt risus. Nunc luctus blandit pellentesque. In ut magna ornare diam sollicitudin porttitor. Curabitur interdum eget dolor non consectetur. Nunc porttitor turpis sed massa finibus venenatis. Sed ex risus, consequat tincidunt arcu vitae, ullamcorper imperdiet erat. Fusce neque erat, sodales non eros tempor, auctor dictum dolor. Nam luctus orci tortor, ut dignissim nibh lacinia ac. In et tincidunt metus. Ut scelerisque augue id placerat pellentesque. Integer condimentum varius tellus, ut interdum eros sollicitudin non. Aliquam a sodales ante, id ornare urna. Praesent lacinia sagittis lacus sed laoreet. Morbi mollis velit ligula, vitae pulvinar magna porta sed. Aliquam finibus justo ac feugiat convallis.
+				
+				Suspendisse mollis, ipsum vel pharetra egestas, neque erat hendrerit mauris, at sodales sem sem quis risus. Pellentesque viverra mi et enim tincidunt semper. Nullam blandit ac ante nec sollicitudin. Donec bibendum, ex vel eleifend volutpat, mauris orci sagittis mi, eget sollicitudin leo diam quis mi. Mauris eget interdum dui. Vivamus auctor ultricies eros vitae aliquet. Mauris tempus sodales euismod. Sed vitae lorem condimentum, sollicitudin dolor et, ullamcorper dolor. Sed malesuada vestibulum vehicula. Sed sit amet aliquet urna.
+				
+				Nunc aliquet ac neque at aliquet. Pellentesque fringilla nisl quis erat tristique dictum. Ut tincidunt, mauris at placerat fermentum, felis urna viverra arcu, sit amet gravida libero massa id leo. Nam eget turpis erat. Sed et placerat sem, quis pharetra lorem. Nullam maximus quam ac velit ultrices tincidunt. Mauris interdum dui ac mi ultrices vestibulum. Curabitur nisl urna, semper nec neque nec, consectetur malesuada erat. Morbi quam quam, tincidunt eu semper quis, euismod a metus. Nulla pellentesque orci in quam laoreet tincidunt. Phasellus nisi nibh, tincidunt non ante vitae, pretium laoreet diam. Morbi rhoncus laoreet nulla, a hendrerit tortor lobortis id. Aliquam in erat justo. Mauris at nisi massa. Vivamus hendrerit dapibus lectus, a malesuada nunc euismod a. Integer ut metus in tellus eleifend elementum.
+				
+				Etiam varius enim justo, ac ultrices libero fringilla sed. Mauris faucibus enim sed ligula laoreet, quis elementum massa feugiat. Ut congue dui ac ultrices lobortis. Vestibulum non mattis ex. Nam id nunc sed ligula sagittis auctor. Etiam lacinia fringilla blandit. Donec sodales, urna eu elementum consectetur, nulla tortor dictum dolor, quis ultricies purus ex nec enim.rticle</p>
+			</article>
+	</main>
+	<footer>
+	</footer>
+</body>
+</html>

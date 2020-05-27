@@ -1,0 +1,166 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+
+
+body {
+    	font-family: 'Questrial', sans-serif;
+}
+
+.jobPlace {
+	letter-spacing: 1.4mm;
+	font-family: 'Arimo';
+}
+
+#name {
+	margin-left: 22mm;
+	letter-spacing: 1.3mm;
+    	font-family: 'Questrial', sans-serif;
+	grid-column-start: 3;
+	grid-column-end: 6;
+	grid-row-start: 1;
+	text-align: right;
+	background-color: #333;
+	padding-right: 4.5mm;
+	padding-top:4.2mm;	
+	font-weight: bold;
+	color:
+}
+
+
+#name h1 {
+	color: white;
+	font-size: 12.5mm;
+	font-weight: bold;
+}
+
+#jobtitle {
+	position: relative;
+	top: 3mm;
+	right: -3mm;
+	color: #404040;
+	background-color: white;
+	font-size: 5mm;
+	padding: 1mm;
+}
+
+.sheet {
+	border: 1px solid black;
+	width: 210mm;
+	height: 297mm;
+}
+
+.container {
+	margin: 7.5mm;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-auto-rows: minmax(25mm, auto);
+	grid-gap: 2mm;
+}
+
+
+#bio {
+	margin-top: -7.25mm;
+	margin-left: -2.2mm;
+	grid-column-start: 1;
+	grid-column-end: 7;
+	grid-row-start: 3;
+	position: relative;
+	width: 98%;
+	top: -2mm;
+	padding-left: 3mm;
+}
+
+#portrait {
+	grid-column-start: 2;
+	grid-column-end: 4;
+	grid-row-start: 1;
+	grid-row-end: 1;
+	width: 60mm;
+	height: 45mm;
+	padding-right: 10mm;
+	object-fit: cover;
+	overflow: hidden;
+}
+
+#contact {
+	grid-column-start: 4;
+	grid-column-end: 6;
+	grid-row-start: 2;
+    	font-family: 'Roboto Mono', monospace;
+	font-weight: 200;
+	text-decoration: underline dotted black;
+	font-size: 3.5mm;
+	padding: 2mm;
+	text-align: right;
+	letter-spacing: 1.25mm;
+	margin-left: -17mm;
+	margin-top: -2mm;
+	margin-bottom: 8mm;
+}
+
+#skills h1, #formation h1, #experience h1, #bio h1 {
+	letter-spacing: 3.15mm;
+	font-family: 'Roboto Mono', monospace;
+	position: relative;
+	top: -1.65mm;
+	color: #333;
+	border-top: 4px solid #655980;
+	border-bottom: 1px solid lightgrey;
+	font-family: 'Roboto Mono', monospace;
+}
+
+h2 {
+	font-family: 'Questrial', 'sans-serif';
+	font-size: 6mm;
+	line-height: 5mm;
+}
+
+h3 {
+	line-height: -10px;
+	border-bottom: 1px dashed lightgrey;
+}
+#skills h2, #formation h2, #experience h2 {
+	font-family: 'Roboto Mono', monospace;
+	position: relative;
+	top: -2.65mm;
+	color: #199EFF;
+}
+
+#skills {
+	position: relative;
+	top: -5.5mm;
+	margin-top: -3.5mm;
+	grid-column-start: 1;
+	grid-column-end: 4;
+	grid-row-start: 4;
+	grid-row-end: 5;
+	width: 90%;
+}
+
+#formation {
+	position: relative;
+	top: -5.5mm;
+	margin-left: -10.5mm;
+	margin-top: -3.5mm;
+	width: 110%;
+	grid-column-start: 4;
+	grid-column-end: 7;
+	grid-row-start: 4;
+}
+
+#experience {
+	position: relative;
+	top: -3mm;
+	text-align: justify;
+	grid-column-start: 1;
+	grid-column-end: 6;
+	grid-row-start: 5;
+	margin-top: -4.5mm;
+}
+
+#formation h1 {
+	text-justify: inter-character;
+}
