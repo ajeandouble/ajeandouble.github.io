@@ -9,6 +9,12 @@ body {
     	font-family: 'Questrial', sans-serif;
 }
 
+.sheet {
+	/* border: 1px solid lightgrey; */
+	width: 210mm;
+	height: 29.7cm;
+}
+
 .jobPlace {
 	letter-spacing: 1.4mm;
 	font-family: 'Arimo';
@@ -46,11 +52,6 @@ body {
 	padding: 1mm;
 }
 
-.sheet {
-	border: 1px solid black;
-	width: 210mm;
-	height: 297mm;
-}
 
 .container {
 	margin: 7.5mm;
