@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>I like</title>
+	<style>
+		* { margin: 0; padding: 0; }
+		body { width: 100vw; background-color: black; }
+		img { transition: 0.35s; }
+		img:hover {	opacity: 0.9; cursor: cell;	}
+		#title {
+			font-size: 100px;
+			z-index: 100;
+			margin-left:auto;
+			margin-right: auto;
+			padding-left: 10vh;
+			color: white;
+			opacity: 0.85;
+			letter-spacing: 20px;
+			position: fixed;
+		}
+		#title-e {
+			color: yellow;
+			opacity: 0.99;
+		}
+		.row {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		/* Create four equal columns that sits next to each other */
+		.column {
+			margin-left: auto;
+			margin-right: auto;
+			flex: 25%;
+			max-width: 25%;
+		}
+
+		.column img {
+			vertical-align: middle;
+			width: 100%;
+		}
+
+		/* Responsive layout - makes a two column-layout instead of four columns */
+		@media screen and (max-width: 800px) {
+			.column {
+				flex: 50%;
+				max-width: 50%;
+			}
+		}
+
+		/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+		@media screen and (max-width: 600px) {
+			.column {
+				flex: 100%;
+				max-width: 100%;
+			}
+		}
+	</style>
+	<script>
+		let show = true;
+		window.onscroll = (e) => {
+			console.log(document.documentElement.scrollTop);
+			if (show && document.documentElement.scrollTop > 1000)
+			{
+				const title = document.getElementById('title');
+				title.style.opacity = 0;
+				console.log('free ajean!');
+				show = false;
+			}
+		}
+	</script>
+</head>
+<body>
+	<span id="title"><i>shit i <span id="title-e">like</e></i></span>
+ <div class="row">
+	<div class="column">
+		<a href="https://www.youtube.com/watch?v=GqZqvB4sUHs"><img src="imgs/0.png" loading="lazy"></a>
+		<a href="#"><img src="imgs/1.png" loading="lazy"></a>
+		<a href="https://www.youtube.com/watch?v=tYbe9XB__eY"><img src="imgs/3.gif" loading="lazy"></a>
+		<a href="https://www.youtube.com/watch?v=5Jp5OCV3E28"><img src="imgs/5.png" loading="lazy"></a>
+		<a href="https://www.youtube.com/watch?v=1O7mZE4xY1E"><img style="filter: invert(1);src" src="imgs/7.jpg" loading="lazy"></a>
+		<a href="https://www.youtube.com/watch?v=GqZqvB4sUHs&t=2042s"><img src="imgs/6.jpg" loading="lazy"></a>
+	</div>
+	<div class="column">
+		<a href="https://www.twitch.tv/georgehotz"><img src="imgs/8.png" loading="lazy"></a>
+		<a href="https://www.youtube.com/watch?v=TcxZSmzPw8k"><img src="imgs/4.gif" loading="lazy"></a>
+		<a href="https://www.twitch.tv/georgehotz"><img src="imgs/9.jpg" loading="lazy"></a>
+		<a href="https://www.youtube.com/watch?v=WArNjp29Ha8"><img src="imgs/10.png" loading="lazy"></a>
+		<a href="https://www.youtube.com/watch?v=WVou8qY7_8Y"><img src="imgs/11.png" loading="lazy"></a>
+		<a href="#"><img src="imgs/0.png" loading="lazy"></a>
+	</div>
+	<div class="column">
+		<a href="#"><img src="imgs/opium-eater_quincey.jpg" loading="lazy"></a>
+		<a href="https://www.youtube.com/watch?v=NRuoXqpL6ZM"><img src="imgs/spacemen3.jpeg" loading="lazy"></a>
+		<a href="https://www.youtube.com/watch?v=_Z06bKvmK-U&t=12m58s"><img src="imgs/rez-ps2.jpg" loading="lazy"></a>
+		<a href="https://images-na.ssl-images-amazon.com/images/I/41XFmF-1CFS.jpg"><img src="imgs/YinkaShonibare2012.jpg" loading="lazy"></a>
+		<a href="https://www.youtube.com/watch?v=WCpeosf6pEE"><img src="imgs/wakeupjerkoffcry.jpg" loading="lazy"></a>
+		<a href="#"><img src="imgs/0.png" loading="lazy"></a>
+		<a href="#"><img src="imgs/0.png" loading="lazy"></a>
+	</div>
+	<div class="column">
+		<a href="#"><img src="imgs/1.png" loading="lazy"></a>
+		<a href="#"><img src="imgs/0.png" loading="lazy"></a>
+		<a href="#"><img src="imgs/1.png" loading="lazy"></a>
+		<a href="#"><img src="imgs/0.png" loading="lazy"></a>
+		<a href="#"><img src="imgs/0.png" loading="lazy"></a>
+		<a href="#"><img src="imgs/1.png" loading="lazy"></a>
+	</div>
+</div>
+</body>
+</html>
